@@ -20,11 +20,11 @@ Reference: Please follow the instructions in http://dev.mysql.com/doc/refman/5.7
 - Enjoy your fisrt RDB, probably!
 
 - ER Diagram
-<img src="/image/CH01-CLASS-STUDENT-GRADE.png" width="50%"> 
+<img src="/lecture/image/CH01-CLASS-STUDENT-GRADE.png" width="50%"> 
 
 ## SQL
 
 Tips : Please, practice your sql skills on https://www.hackerrank.com/domains/sql.
 
 - ER Diagram
-<img src="/image/CH02-ITEM-RETAIL-SKU.png" width="50%"> 
+<img src="/lecture/image/CH02-ITEM-RETAIL-SKU.png" width="50%"> 
