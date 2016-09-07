@@ -3,9 +3,9 @@
 
 ## Table of Contents
 
-- [Install](#install)
-- [Introduction](#introduction)
-- [SQL](#SQL)
+- [0. Install](#install)
+- [1. Introduction](#introduction)
+- [2. SQL](#SQL)
 
 ## Install
 Please, sign up http://dev.mysql.com/downloads/ and install MySQL Community Server(5.7 or higher) and MySQL Workbench (6.3 or higher) on your computer.
@@ -28,9 +28,11 @@ Please visit [KHAN ACADEMY "Intro to SQL"](https://www.khanacademy.org/computing
 
 Please follow the instructions below for next class:
 
-  First, read the ER Diagram and SELECT statements examples.
+  First, read the ER Diagram and all examples of a SQL SELECT statement.
   
-  Second, visit [KHAN ACEDEMY "SQL Script"](https://www.khanacademy.org/computer-programming/new/sql) website and practice SELECT statements. Hope [this script](/lecture/ch02_material/CH02-KHAN-ACADEMY.sql) helps. 
+  Second, visit [KHAN ACEDEMY "SQL Script"](https://www.khanacademy.org/computer-programming/new/sql) website and practice SELECT statements. 
+  
+  Final, enjoy, SQL World! Hope [this script](/lecture/ch02_material/CH02-KHAN-ACADEMY.sql) helps. 
 
 ### ER Diagram
 
