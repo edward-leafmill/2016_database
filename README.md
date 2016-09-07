@@ -29,6 +29,7 @@ Please visit [KHAN ACADEMY "Intro to SQL"](https://www.khanacademy.org/computing
 Please follow the instructions below for next class:
 
   First, read the ER Diagram and SELECT statements examples.
+  
   Second, visit [KHAN ACEDEMY "SQL Script"](https://www.khanacademy.org/computer-programming/new/sql) website and practice SELECT statements. Hope [this script](/lecture/ch02_material/CH02-KHAN-ACADEMY.sql) helps. 
 
 ### ER Diagram
