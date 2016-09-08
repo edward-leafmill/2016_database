@@ -6,7 +6,7 @@
 - [0. Install](#install)
 - [1. Introduction](#introduction)
 - [2. SQL](#SQL)
-- [3. SQL Part2](#SQL)
+- [3. SQL Part2](#SQL Part2)
 - [4. Relational Model](#ER Model)
 
 
@@ -169,5 +169,7 @@ SELECT *
 FROM ORDER_ITEM
 ORDER BY Price DESC, OrderNumber ASC;
 ```
+
+## SQL Part2
 
 ## ER Model
