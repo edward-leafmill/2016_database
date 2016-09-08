@@ -6,6 +6,9 @@
 - [0. Install](#install)
 - [1. Introduction](#introduction)
 - [2. SQL](#SQL)
+- [3. SQL Part2](#SQL)
+- [4. Relational Model](#ER Model)
+
 
 ## Install
 Please, sign up http://dev.mysql.com/downloads/ and install MySQL Community Server(5.7 or higher) and MySQL Workbench (6.3 or higher) on your computer.
@@ -32,7 +35,7 @@ Please follow the instructions below for next class:
   
   Second, visit [KHAN ACEDEMY "SQL Script"](https://www.khanacademy.org/computer-programming/new/sql) website and practice SELECT statements. 
   
-  Final, enjoy, SQL World! Hope [this script](/lecture/ch02_material/CH02-KHAN-ACADEMY.sql) helps. 
+  Third, enjoy, SQL World! Hope [this script](/lecture/ch02_material/CH02-KHAN-ACADEMY.sql) helps. 
 
 ### ER Diagram
 
@@ -167,4 +170,4 @@ FROM ORDER_ITEM
 ORDER BY Price DESC, OrderNumber ASC;
 ```
 
-Tips : Please, practice your sql skills on https://www.hackerrank.com/domains/sql.
+## ER Model
