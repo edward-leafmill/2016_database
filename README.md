@@ -5,9 +5,9 @@
 
 - [0. Install](#install)
 - [1. Introduction](#introduction)
-- [2. SQL](#SQL)
-- [3. SQL Part2](#SQL Part2)
-- [4. Relational Model](#ER Model)
+- [2. SQL](#sql)
+- [3. SQL Part2](#sql-part2)
+- [4. Relational Model](#er-model)
 
 
 ## Install
