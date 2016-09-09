@@ -19,7 +19,7 @@ Reference: Please follow the instructions in http://dev.mysql.com/doc/refman/5.7
 
 - Open MySQL Workbench and connect MySQL server.
 - Run "CH01-CLASS-GRADE-STUDENT" script.
-- Enjoy your fisrt RDB world, probably!
+- Enjoy your first RDB world, probably!
 
 ### ER Diagram
 
@@ -171,5 +171,120 @@ ORDER BY Price DESC, OrderNumber ASC;
 ```
 
 ## SQL Part2
+
+Please visit [KHAN ACADEMY "Intro to SQL"](https://www.khanacademy.org/computing/computer-programming/sql) website and watch "More advanced SQL queries" and "Relational queries in SQL" section.
+
+### Notice
+
+2016 SQL League is  the extreme competition for student teams in Database class. The rule is simple, given the problems, each team tries to solve all the problems as soon as possible and submit answers to the instructor via email. Half of them who first reache instructor's inbox are the winners. The winners will receive some points as compensation.
+
+### Performing Calculations in SQL Queries
+There are five SQL built-in functions for performing arithmetic on columns in a given table: SUM, AVG, MIN, MAX, and COUNT.
+
+```sql
+SELECT [Built-In Function] ( [YOUR_OWN_COLUMN_NAME1] ) ...
+FROM [YOUR_OWN_TABLE_NAME];
+```
+#### Examples
+```sql
+SELECT SUM(ExtendedPrice) AS OrderItemSum,
+       AVG(ExtendedPrice) AS OrderItemAvg,
+       MIN(ExtendedPrice) AS OrderItemMin,
+       MAX(ExtendedPrice) AS OrderItemMax
+FROM ORDER_ITEM;
+
+SELECT COUNT(*) AS NumberOfRows 
+FROM ORDER_ITEM;
+```
+
+### Two limitations to SQL built-in functions. 
+- First, except for grouping (USING GROUP BY), you cannot combine a table column name with an SQL built-in function.
+- Second, you cannot use them in an SQL WHERE clause.
+
+#### Examples
+```sql
+SELECT Department, COUNT(*)
+FROM SKU_DATA;
+
+SELECT *
+FROM RETAIL_ORDER
+WHERE OrderTotal > AVG(OrderTotal);
+```
+
+### SQL expressions in SQL SELECT Statements
+```sql
+SELECT Quantity * Price AS EP 
+FROM ORDER_ITEM;
+
+SELECT CONCAT (Buyer, ' in ', Department) AS Sponsor 
+FROM SKU_DATA;
+```
+
+### Grouping in SQL SeLeCT Statements
+In SQL queries, rows can be grouped according to common values using the SQL GROUP BY clause. SQL provides one more GROUP BY clause feature that the SQL HAVING clause restricts the groups that are presented in the result.
+
+```sql
+SELECT [YOUR_OWN_COLUMN_NAME1], [YOUR_OWN_COLUMN_NAME2], ..., [Built-In Function] ( [YOUR_OWN_COLUMN_NAME1] )
+FROM [YOUR_OWN_TABLE_NAME]
+GROUP BY [YOUR_OWN_COLUMN_NAME1], [YOUR_OWN_COLUMN_NAME2], ...;
+
+SELECT Department, COUNT(*) AS Dept_SKU_Count
+FROM SKU_DATA
+GROUP BY Department;
+
+SELECT Department, COUNT(*) AS Dept_SKU_Count 
+FROM SKU_DATA
+GROUP BY Department
+HAVING COUNT(*) > 1;
+```
+
+### Querying Two or More Tables with SQL
+The SQL join operator is used to combine two or more tables by concatenating the rows of one table with the rows of another table.
+
+```sql
+SELECT *
+FROM [YOUR_OWN_TABLE_NAME1], [YOUR_OWN_TABLE_NAME2]
+WHERE [YOUR_OWN_TABLE_NAME1].[YOUR_OWN_COLUMN_NAME1] = [YOUR_OWN_TABLE_NAME2].[YOUR_OWN_COLUMN_NAME2];
+```
+
+#### Examples
+```sql
+SELECT *
+FROM RETAIL_ORDER, ORDER_ITEM
+WHERE RETAIL_ORDER.OrderNumber=ORDER_ITEM.OrderNumber;
+```
+
+### The SQL JOIN ON Syntax
+
+- INNER JOIN
+  When the tables are joined using an equal condition, this join is called an equijoin. This type of join is also referred to as an inner join.
+```sql
+SELECT *
+FROM [YOUR_OWN_TABLE_NAME1] INNER JOIN [YOUR_OWN_TABLE_NAME2]
+     ON [YOUR_OWN_TABLE_NAME1].[YOUR_OWN_COLUMN_NAME1] = [YOUR_OWN_TABLE_NAME2].[YOUR_OWN_COLUMN_NAME2];
+```
+
+#### Examples
+```sql
+SELECT *
+FROM RETAIL_ORDER INNER JOIN ORDER_ITEM
+     ON RETAIL_ORDER.OrderNumber=ORDER_ITEM.OrderNumber;
+```
+
+- OUTER JOIN
+  because the table we want is listed first in the query and is thus on the left side of the table listing, we specifically use an SQL left outer join, which uses the SQL LEFT JOIN syntax.
+```sql
+SELECT *
+FROM [YOUR_OWN_TABLE_NAME1] {LEFT|RIGHT} OUTER JOIN [YOUR_OWN_TABLE_NAME2]
+WHERE [YOUR_OWN_TABLE_NAME1].[YOUR_OWN_COLUMN_NAME1] = [YOUR_OWN_TABLE_NAME2].[YOUR_OWN_COLUMN_NAME2];
+```
+
+#### Examples
+```sql
+SELECT *
+FROM ORDER_ITEM RIGHT OUTER JOIN SKU_DATA
+     ON ORDER_ITEM.SKU=SKU_DATA.SKU;
+```
+
 
 ## ER Model
