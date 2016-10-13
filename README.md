@@ -1,5 +1,5 @@
 # 2016_database
-2016, Database, Industry Engineering, Pusan National University
+Fall Semester 2016, Database, Industry Engineering, Pusan National University
 
 ## Table of Contents
 
@@ -8,7 +8,9 @@
 - [2. SQL](#sql)
 - [3. SQL Part2](#sql-part2)
 - [4. Relational Model](#relational-model)
-- [Team 1](#team-1) [Team 2](#team-2) [Team 3](#team-3) [Team 4](#team-4) [Team 5](#team-5)
+  - [Team 1](#team-1) [Team 2](#team-2) [Team 3](#team-3) [Team 4](#team-4) [Team 5](#team-5)
+  - [Team 6](#team-6) [Team 7](#team-7) [Team 8](#team-8) [Team 9](#team-9) [Team 10](#team-10)
+  - [Team 11](#team-11) [Team 12](#team-12) [Team 13](#team-13)
 
 ## Install
 Please, sign up http://dev.mysql.com/downloads/ and install MySQL Community Server(5.7 or higher) and MySQL Workbench (6.3 or higher) on your computer.
@@ -309,18 +311,35 @@ FROM ORDER_ITEM RIGHT OUTER JOIN SKU_DATA
 
 ![5 team](/term/the first material/5.png)
 
+### Team 6
+
 ![6 team](/term/the first material/6.png)
+
+### Team 7
 
 ![7 team](/term/the first material/7.png)
 
+### Team 8
+
 ![8 team](/term/the first material/8.png)
+
+### Team 9
 
 ![9 team](/term/the first material/9.png)
 
+### Team 10
+
 ![10 team](/term/the first material/10.png)
+
+### Team 11
 
 ![11 team](/term/the first material/11.png)
 
+### Team 12
+
 ![12 team](/term/the first material/12.png)
 
+### Team 13
+
 ![13 team](/term/the first material/13.png)
+
