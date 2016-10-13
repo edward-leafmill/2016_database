@@ -7,8 +7,8 @@
 - [1. Introduction](#introduction)
 - [2. SQL](#sql)
 - [3. SQL Part2](#sql-part2)
-- [4. Relational Model](#er-model)
-
+- [4. Relational Model](#relational-model)
+- [Team 1](#team-1) [Team 2](#team-2) [Team 3](#team-3) [Team 4](#team-4) [Team 5](#team-5)
 
 ## Install
 Please, sign up http://dev.mysql.com/downloads/ and install MySQL Community Server(5.7 or higher) and MySQL Workbench (6.3 or higher) on your computer.
@@ -287,4 +287,40 @@ FROM ORDER_ITEM RIGHT OUTER JOIN SKU_DATA
 ```
 
 
-## ER Model
+## Relational Model
+
+### Team 1
+
+![1 team](/term/the first material/1.png)
+
+### Team 2
+
+![2 team](/term/the first material/2.png)
+
+### Team 3
+
+![3 team](/term/the first material/3.png)
+
+### Team 4
+
+![4 team](/term/the first material/4.png)
+
+### Team 5
+
+![5 team](/term/the first material/5.png)
+
+![6 team](/term/the first material/6.png)
+
+![7 team](/term/the first material/7.png)
+
+![8 team](/term/the first material/8.png)
+
+![9 team](/term/the first material/9.png)
+
+![10 team](/term/the first material/10.png)
+
+![11 team](/term/the first material/11.png)
+
+![12 team](/term/the first material/12.png)
+
+![13 team](/term/the first material/13.png)
