@@ -11,6 +11,7 @@ Fall Semester 2016, Database, Industry Engineering, Pusan National University
   - [Team 1](#team-1) [Team 2](#team-2) [Team 3](#team-3) [Team 4](#team-4) [Team 5](#team-5)
   - [Team 6](#team-6) [Team 7](#team-7) [Team 8](#team-8) [Team 9](#team-9) [Team 10](#team-10)
   - [Team 11](#team-11) [Team 12](#team-12) [Team 13](#team-13)
+- [5. ER Model] (#er-model)
 
 ## Install
 Please, sign up http://dev.mysql.com/downloads/ and install MySQL Community Server(5.7 or higher) and MySQL Workbench (6.3 or higher) on your computer.
@@ -343,3 +344,6 @@ FROM ORDER_ITEM RIGHT OUTER JOIN SKU_DATA
 
 ![13 team](/term/the first material/13.png)
 
+# ER Model
+
+![1:N relationship](/lecture/image/CH05-1_N_ER_DIAGRAM.001.jpeg)
