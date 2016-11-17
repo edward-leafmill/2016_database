@@ -12,6 +12,8 @@ Fall Semester 2016, Database, Industry Engineering, Pusan National University
   - [Team 6](#team-6) [Team 7](#team-7) [Team 8](#team-8) [Team 9](#team-9) [Team 10](#team-10)
   - [Team 11](#team-11) [Team 12](#team-12) [Team 13](#team-13)
 - [5. ER Model] (#er-model)
+- [6. Database Design] (#database-design)
+- [7. SQL for Database Construction] (#sql-for-database-construction)
 
 ## Install
 Please, sign up http://dev.mysql.com/downloads/ and install MySQL Community Server(5.7 or higher) and MySQL Workbench (6.3 or higher) on your computer.
@@ -347,3 +349,44 @@ FROM ORDER_ITEM RIGHT OUTER JOIN SKU_DATA
 # ER Model
 
 ![1:N relationship](/lecture/image/CH05-1_N_ER_DIAGRAM.001.jpeg)
+
+## Database Design
+
+## SQL for Database Construction
+
+### Using the SQL CREATE TABLE Statement
+
+- Variations in SQL Data Types
+  - [MySQL 5.6 Data types] (http://dev.mysql.com/doc/refman/5.7/en/data-types.html)
+
+- Optional Constraint
+
+```sql
+CREATE TABLE NewTableName (
+  ColumnName DataType OptionalConstraint, ColumnName DataType OptionalConstraint, ...
+  Optional table constraint
+  ...
+);
+```
+
+### Examples
+```sql
+CREATE TABLE `COLLEGE` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `대학명` varchar(255) NOT NULL DEFAULT '미정',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `대학명_UNIQUE` (`대학명`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `DEPARTMENT` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `대학아이디` int(11) NOT NULL DEFAULT '0',
+  `주관학과명` varchar(45) NOT NULL DEFAULT '미정',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `주관학과명_UNIQUE` (`주관학과명`),
+  KEY `fk_DEPARTMENT_COLLEGE_idx` (`대학아이디`),
+  CONSTRAINT `fk_DEPARTMENT_COLLEGE` FOREIGN KEY (`대학아이디`) REFERENCES `COLLEGE` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8;
+
+```
