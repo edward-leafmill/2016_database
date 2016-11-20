@@ -358,7 +358,9 @@ FROM ORDER_ITEM RIGHT OUTER JOIN SKU_DATA
 
 ```sql
 CREATE TABLE NewTableName (
-  ColumnName DataType OptionalConstraint, ColumnName DataType OptionalConstraint, ...
+  ColumnName DataType OptionalConstraint, 
+  ColumnName DataType OptionalConstraint, 
+  ...
   Optional table constraint
   ...
 );
