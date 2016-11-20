@@ -356,11 +356,6 @@ FROM ORDER_ITEM RIGHT OUTER JOIN SKU_DATA
 
 ### Using the SQL CREATE TABLE Statement
 
-- Variations in SQL Data Types
-  - [MySQL 5.6 Data types] (http://dev.mysql.com/doc/refman/5.7/en/data-types.html)
-
-- Optional Constraint
-
 ```sql
 CREATE TABLE NewTableName (
   ColumnName DataType OptionalConstraint, ColumnName DataType OptionalConstraint, ...
@@ -368,6 +363,15 @@ CREATE TABLE NewTableName (
   ...
 );
 ```
+
+- Variations in SQL Data Types (INT, VARCHAR, DATETIME)
+  - [MySQL 5.6 Data types] (http://dev.mysql.com/doc/refman/5.6/en/data-types.html)
+
+- Optional Constraint (NOT NULL, DEFAULT, AUTO_INCREMENT)
+  - [MySQL 5.6 Data Properties] (http://dev.mysql.com/doc/refman/5.6/en/create-table.html#create-table-types-attributes)
+
+- Optional Table constraint (PRIMARY KEY, UNIQUE, FOREIGN KEY, INDEX)
+  - [MySQL 5.6 Indexes and Foreign Keys] (http://dev.mysql.com/doc/refman/5.6/en/create-table.html#create-table-indexes-keys)
 
 ### Examples
 ```sql
