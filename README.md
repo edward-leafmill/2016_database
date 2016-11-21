@@ -396,3 +396,150 @@ CREATE TABLE `DEPARTMENT` (
 ) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8;
 
 ```
+
+### TRIGGER
+```
+DELIMITER //
+
+CREATE TRIGGER AfterTRANSInsertSetAskingPrice
+AFTER INSERT ON TRANS
+FOR EACH ROW
+
+BEGIN
+
+    DECLARE	varRowCount		      Int;
+    DECLARE	varPriorRowCount	  Int;
+    DECLARE varWorkID			  Int;
+	DECLARE	varTransactionID	  Int;
+	DECLARE	varAcquisitionPrice	  Numeric(8,2);
+	DECLARE	varNewAskingPrice	  Numeric(8,2);
+	DECLARE	varSumNetProfit		  Numeric(8,2);
+	DECLARE	varAvgNetProfit		  Numeric(8,2);
+	
+	SET     varTransactionID = NEW.TransactionID;
+    SET		varAcquisitionPrice = NEW.AcquisitionPrice;
+	SET     varWorkID = NEW.WorkID;
+
+	# First find if work has been here before.
+
+
+	SELECT 		COUNT(*) INTO varRowCount
+	FROM	   	TRANS
+	WHERE	  	WorkID = varWorkID;
+
+	SET varPriorRowCount = (varRowCount - 1);
+
+
+	# If varPriorRowCount = 0 this is a new acquistion.
+	IF (varPriorRowCount = 0) THEN
+		# Set @NewAskingPrice to twice the acquisition cost.
+		SET varNewAskingPrice = (2 * varAcquisitionPrice);
+	ELSE
+		# The work has been here before
+		# We have to determine the value of varNewAskingPrice
+
+		SELECT    	SUM(NetProfit) INTO varSumNetProfit
+		FROM		ArtistWorkNetView AS AWNV
+		WHERE		AWNV.WorkID = varWorkID
+		GROUP BY	AWNV.WorkID;
+
+		SET varAvgNetProfit = (varSumNetProfit / varPriorRowCount);
+
+		# Now choose larger value for the new AskingPrice.
+
+		IF ((varAcquisitionPrice + varAvgNetProfit)
+				> (2 * varAcquisitionPrice)) THEN
+			SET varNewAskingPrice = (varAcquisitionPrice + varAvgNetProfit);
+		ELSE
+			SET varNewAskingPrice = (2 * varAcquisitionPrice);
+			END IF;
+		END IF;
+
+  # Update PRICELIST with the value of AskingPrice
+
+	INSERT INTO PRICELIST VALUES (varTransactionID, 0);
+
+	UPDATE PRICELIST
+		SET		AskingPrice = varNewAskingPrice
+		WHERE	TransactionID = varTransactionID;
+
+END
+//
+
+DELIMITER ;
+```
+
+### STORED PROCEDURE
+```
+DELIMITER //
+
+CREATE PROCEDURE InsertCustomerAndInterests
+	    (IN newLastName		 Char(25),
+	     IN newFirstName	 Char(25),
+         IN newEmailAddress	 Varchar(100),
+	     IN newAreaCode		 Char(3),
+	     IN newPhoneNumber 	 Char(8),		 
+		 IN newNationality 	 Char(30))
+
+BEGIN
+
+  DECLARE	varRowCount		Int;
+  DECLARE	varArtistID	  	Int;
+  DECLARE	varCustomerID	Int;
+  DECLARE  	done           	Int DEFAULT 0;
+  DECLARE  	ArtistCursor   	CURSOR FOR
+					   SELECT	 ArtistID
+					   FROM	   	 ARTIST
+					   WHERE	 Nationality=newNationality;
+  DECLARE  	continue       	HANDLER FOR NOT FOUND SET done = 1;
+
+  # Check to see if Customer already exist in database
+
+	SELECT		COUNT(*) INTO varRowCount
+	FROM	  	CUSTOMER
+	WHERE	  	LastName = newLastName
+		AND	  	FirstName = newFirstName
+        AND   	EmailAddress =	newEmailAddress
+		AND   	AreaCode = newAreaCode
+		AND   	PhoneNumber = newPhoneNumber;
+		
+
+	# IF (varRowCount > 0) THEN Customer already exists.
+	IF (varRowCount > 0) THEN
+		ROLLBACK;
+		SELECT 'Customer already exists';
+	END IF;
+
+  # IF (varRowCount = 0) THEN Customer does not exist.
+  # Insert new Customer data.
+
+  IF (varRowCount = 0) THEN
+        INSERT INTO CUSTOMER (LastName, FirstName, EmailAddress, AreaCode, PhoneNumber)
+            VALUES(newLastName, newFirstName,  newEmailAddress, newAreaCode, newPhoneNumber);
+
+        # Get new CustomerID surrogate key value.
+
+        SET varCustomerID = LAST_INSERT_ID();
+
+        # Create intersection record for each appropriate Artist.
+
+        OPEN	ArtistCursor;
+				REPEAT
+                FETCH ArtistCursor INTO varArtistID;
+                    IF NOT done THEN
+                        INSERT INTO CUSTOMER_ARTIST_INT (ArtistID, CustomerID)
+                            VALUES(varArtistID, varCustomerID);
+                        END IF;
+                UNTIL done END REPEAT;
+        CLOSE	ArtistCursor;
+
+        SELECT 'New customer and artist interest data added to database.'
+            AS InsertCustomerAndInterstsResults;
+        END IF;
+END
+//
+
+DELIMITER ;
+
+
+```
