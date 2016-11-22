@@ -13,9 +13,9 @@ Fall Semester 2016, Database, Industry Engineering, Pusan National University
   - [Team 11](#team-11) [Team 12](#team-12) [Team 13](#team-13)
 - [5. ER Model] (#er-model)
 - [6. Database Design] (#database-design)
-  - [Team 1](#team-1) [Team 2](#team-2) [Team 3](#team-3) [Team 4](#team-4) [Team 5](#team-5)
-  - [Team 6](#team-6) [Team 7](#team-7) [Team 8](#team-8) [Team 9](#team-9) [Team 10](#team-10)
-  - [Team 11](#team-11) [Team 12](#team-12)
+  - [Team 6-1](#team-6-1) [Team 6-2](#team-6-2) [Team 6-3](#team-6-3) [Team 6-4](#team-6-4) [Team 6-5](#team-6-5)
+  - [Team 6-6](#team-6-6) [Team 6-7](#team-6-7) [Team 6-8](#team-6-8) [Team 6-9](#team-6-9) [Team 6-10](#team-6-10)
+  - [Team 6-11](#team-6-11) [Team 6-12](#team-6-12)
 - [7. SQL for Database Construction] (#sql-for-database-construction)
 
 ## Install
@@ -355,57 +355,53 @@ FROM ORDER_ITEM RIGHT OUTER JOIN SKU_DATA
 
 ## Database Design
 
-### Team 1
+### Team 6 1
 
-![1 team](/term/the second material/1.png)
+![6.1 team](/term/the second material/1.png)
 
-### Team 2
+### Team 6 2
 
-![2 team](/term/the second material/2.png)
+![6.2 team](/term/the second material/2.png)
 
-### Team 3
+### Team 6 3
 
-![3 team](/term/the second material/3.png)
+![6.3 team](/term/the second material/3.png)
 
-### Team 4
+### Team 6 4
 
-![4 team](/term/the second material/4.png)
+![6.4 team](/term/the second material/4.png)
 
-### Team 5
+### Team 6 5
 
-![5 team](/term/the second material/5.png)
+![6.5 team](/term/the second material/5.png)
 
-### Team 6
+### Team 6 6
 
-![6 team](/term/the second material/6.png)
+![6.6 team](/term/the second material/6.png)
 
-### Team 7
+### Team 6 7
 
-![7 team](/term/the second material/7.png)
+![6.7 team](/term/the second material/7.png)
 
-### Team 8
+### Team 6 8
 
-![8 team](/term/the second material/8.png)
+![6.8 team](/term/the second material/8.png)
 
-### Team 2
+### Team 6 9
 
-![2 team](/term/the second material/2.png)
+![6.9 team](/term/the second material/9.png)
 
-### Team 9
+### Team 6 10
 
-![9 team](/term/the second material/9.png)
+![6.10 team](/term/the second material/10.png)
 
-### Team 10
+### Team 6 11
 
-![10 team](/term/the second material/10.png)
+![6.11 team](/term/the second material/11.png)
 
-### Team 11
+### Team 6 12
 
-![11 team](/term/the second material/11.png)
-
-### Team 12
-
-![12 team](/term/the second material/12.png)
+![6.12 team](/term/the second material/12.png)
 
 
 ## SQL for Database Construction
