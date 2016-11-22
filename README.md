@@ -13,6 +13,9 @@ Fall Semester 2016, Database, Industry Engineering, Pusan National University
   - [Team 11](#team-11) [Team 12](#team-12) [Team 13](#team-13)
 - [5. ER Model] (#er-model)
 - [6. Database Design] (#database-design)
+  - [Team 1](#team-1) [Team 2](#team-2) [Team 3](#team-3) [Team 4](#team-4) [Team 5](#team-5)
+  - [Team 6](#team-6) [Team 7](#team-7) [Team 8](#team-8) [Team 9](#team-9) [Team 10](#team-10)
+  - [Team 11](#team-11) [Team 12](#team-12)
 - [7. SQL for Database Construction] (#sql-for-database-construction)
 
 ## Install
@@ -351,6 +354,59 @@ FROM ORDER_ITEM RIGHT OUTER JOIN SKU_DATA
 ![1:N relationship](/lecture/image/CH05-1_N_ER_DIAGRAM.001.jpeg)
 
 ## Database Design
+
+### Team 1
+
+![1 team](/term/the second material/1.png)
+
+### Team 2
+
+![2 team](/term/the second material/2.png)
+
+### Team 3
+
+![3 team](/term/the second material/3.png)
+
+### Team 4
+
+![4 team](/term/the second material/4.png)
+
+### Team 5
+
+![5 team](/term/the second material/5.png)
+
+### Team 6
+
+![6 team](/term/the second material/6.png)
+
+### Team 7
+
+![7 team](/term/the second material/7.png)
+
+### Team 8
+
+![8 team](/term/the second material/8.png)
+
+### Team 2
+
+![2 team](/term/the second material/2.png)
+
+### Team 9
+
+![9 team](/term/the second material/9.png)
+
+### Team 10
+
+![10 team](/term/the second material/10.png)
+
+### Team 11
+
+![11 team](/term/the second material/11.png)
+
+### Team 12
+
+![12 team](/term/the second material/12.png)
+
 
 ## SQL for Database Construction
 
